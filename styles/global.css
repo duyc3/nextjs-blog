@@ -2,10 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  background: rgb(34, 195, 87);
+  background: radial-gradient(circle, rgb(34, 195, 87) 20%, rgba(253, 250, 45, 0.6954131995) 93%);
 }
 
 * {
@@ -13,7 +14,7 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #0061f3;
   text-decoration: none;
 }
 
@@ -24,4 +25,4 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
-}
+}/*# sourceMappingURL=global.css.map */
