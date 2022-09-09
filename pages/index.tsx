@@ -5,18 +5,18 @@ import { getSortedPostsData } from '../lib/posts';
 //import { getSortedBlogsData } from '../lib/blogs';
 import Link from 'next/link';
 import Date from '../components/date';
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+import { GetStaticProps } from 'next';
 
 
-
-export default function Home({allPostsData,allBlogsData}) {
+export default function Home({
+  allPostsData
+}:{
+  allPostsData: {
+  date: string
+  title: string
+  id: string
+}[]
+}) {
  
   return (
     <Layout home>
@@ -43,10 +43,23 @@ export default function Home({allPostsData,allBlogsData}) {
             </small>
           </li>
           ))}
-        </ul>
+        </ul>  
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
         
       </section>
-      
+
     </Layout>
   );
+}
+
+export const getStaticProps: GetStaticProps = async()=>{
+  const allPostsData = getSortedPostsData( )
+  return {
+    props:{
+      allPostsData
+    }
+  }
 }
