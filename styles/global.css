@@ -1,12 +1,13 @@
 html,
 body {
+  color: rgb(247, 245, 245);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  background: rgb(34, 195, 87);
-  background: radial-gradient(circle, rgb(34, 195, 87) 20%, rgba(253, 250, 45, 0.6954131995) 93%);
+  background-image: url(https://wallpaperaccess.com/full/3173660.jpg);
+  background-image: no-repeat;
 }
 
 * {

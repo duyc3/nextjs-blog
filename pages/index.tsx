@@ -6,16 +6,17 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import { GetStaticProps } from 'next';
+import { getApiData } from '../lib/api';
 
 
 export default function Home({
-  allPostsData
+  allPostsData,allData
 }:{
   allPostsData: {
   date: string
   title: string
   id: string
-}[]
+}[],allData
 }) {
  
   return (
@@ -23,7 +24,8 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      
+      <section className={utilStyles.headingMd1}>
         <p>Hi, I'm Duy. I am a Front-end developer. you can contact me by <a href='https://www.facebook.com/QuangDuy2510'>Facebook</a></p>
         <p>
         Here are some of my info
@@ -49,17 +51,30 @@ export default function Home({
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         
+            <ul className={utilStyles.list}>
+              <li className={utilStyles.listItem} key={allData.node_id}>
+                <Link href={`/apies/${allData.node_id}`}>
+                  <a>{allData.name}</a>
+                </Link>
+                <br />
+                <Date dateString={allData.pushed_at}></Date>
+              </li>
+            </ul>
+        
       </section>
-
+      
     </Layout>
   );
 }
 
 export const getStaticProps: GetStaticProps = async()=>{
+  const allData = await getApiData();
   const allPostsData = getSortedPostsData( )
   return {
     props:{
-      allPostsData
+      allPostsData,
+      allData
+      
     }
   }
 }

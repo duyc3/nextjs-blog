@@ -38,11 +38,13 @@ export default function Layout({
               priority
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              height={244}
+              width={244}
               alt={name}
             />
+            <div className='box'>
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            </div>
           </>
         ) : (
           <>
@@ -72,8 +74,9 @@ export default function Layout({
           <Link href="/">
             <a>← Back to home</a>
           </Link>
-        </div>
+         </div>  
       )}
     </div>
+    
   );
 }
